@@ -226,11 +226,20 @@ button.button:hover {
 
 .column3{
     max-width: 1047px;
+    position: relative;
     margin: auto;
-    display: grid;
-    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-    grid-column-gap: 30px;
-    grid-row-gap: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.product_box {
+    flex-basis: 31%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #e1e1e1, 0px 0px 5px #4e4e4e59;
+    margin-bottom: 35px;
 }
 .content_header {
     text-align: center;
@@ -239,18 +248,14 @@ button.button:hover {
 .product_image {
     display: inline-flex;
     overflow: hidden;
+    width: 100%;
 }
 .product_image img{
     transition: 300ms;
+    width: 100%;
 }
 .product_image:hover img {
     transform: scale(1.1);
-}
-.product_box {
-    padding: 14px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px #e1e1e1, 0px 0px 5px #4e4e4e59;
 }
 .product_detailes {
     margin: 10px 0 5px;
@@ -287,8 +292,12 @@ span.white_space {
     color: #5E6366;
 }
 .see_more {
-    grid-column: 3 / -1;
+    display: inline-block;
+    width: 100px;
     text-align: right;
+    position: absolute;
+    right: 0;
+    bottom: -35px;
 }
 .see_more a {
     color: #e91e63;
@@ -316,9 +325,11 @@ span.white_space {
 }
 
 article.article_box {
-    max-width: 329px;
+    flex-basis: 31%;
+    max-width: 335px;
     border-radius: 10px;
     box-shadow: 0px 0px 15px #e1e1e1, 0px 0px 5px #4e4e4e59;
+    margin-bottom: 35px;
 }
 .blog_image{
     width: 100%;
@@ -330,12 +341,12 @@ article.article_box {
 }
 .blog_detailes {
     padding: 20px;
+    border-top: 1px solid #e1e1e1;
 }
 
 .blog_detailes>span {
     font-size: 14px;
     color: #6d6d6e;
-    border-top: 1px solid #a7a7a7;
 }
 .blog_detailes>h4 a {
     color: #242B2E;
@@ -430,7 +441,7 @@ footer.footer {
 
 
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 688px) {
     .header{
         display: none;
     }
@@ -458,7 +469,15 @@ footer.footer {
     .main_section_text h1{
         font-size: 24px;
         text-align: center;
-        line-height: 50px;
+    }
+    .main_section_text h1 span{
+       display: block;
+       line-height: 25px;
+    }
+    span.animation::after{
+        background-color: transparent;
+        border-left: none;
+        animation: none;
     }
     .main_section_text p{
         width: 100%;
@@ -469,7 +488,7 @@ footer.footer {
         font-size: 14px;
     }
     .main_section_image{
-        width: 75%;
+        width: 60%;
         margin: auto;
     }
     .main_section_image img{
@@ -491,7 +510,7 @@ footer.footer {
         justify-content: center;
     }
     .product_box{
-        margin: auto;
+        margin: 0 auto 35px;
     }
     .see_more{
         width: 100%;
@@ -501,13 +520,87 @@ footer.footer {
         width: 100%;
         display: flex;
     }
-    .footer_info p{
-        font-size: 12px;
-        font-weight: 400;
-    }
     section{
         padding: 30px 0;
     }
+
+}
+
+
+
+/* tablet device */
+
+
+
+@media only screen and (min-width: 689px) and (max-width: 992px) {
+    .header{
+        display: none;
+    }
+    .main{
+        width: 100%;
+    }
+    .container{
+        width: 100%;
+    }
+    .row{
+        width: 100%;
+    }
+    .main_section_text{
+        flex-basis: 52%;
+    }
+    .main_section_image{
+        flex-basis: 38%;
+    }
+    .main_section_image img{
+        width: 100%;
+    }
+    .main_section_text h1{
+        font-size: 32px;
+        line-height: 55px;
+    }
+    .main_section_text h1 span{
+        display: inline;
+     }
+     span.animation::after{
+         background-color: transparent;
+         border-left: none;
+         animation: none;
+     }
+     .web_logo{
+         flex-basis: 22%;
+         align-items: center;
+     }
+     .content_header{
+         width: 100%;
+     }
+     .column3{
+        width: 75%;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+    .product_box{
+        flex-basis: 47%;
+    }
+    .product_detailes h2{
+        font-size: 1.5em;
+        line-height: 25px;
+    }
+    .price{
+        padding: 15px 0 5px;
+    }
+    article.article_box{
+        flex-basis: 47%;
+    }
+    .footer_info h3{
+        font-size: 24px;
+        font-weight: 400;
+    }
+    
+
+
+
+
 
 }
 
