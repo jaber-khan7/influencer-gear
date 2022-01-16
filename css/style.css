@@ -326,7 +326,7 @@ span.white_space {
 }
 .see_more {
     display: inline-block;
-    width: 100px;
+    width: 100%;
     text-align: right;
     position: absolute;
     right: 40px;
